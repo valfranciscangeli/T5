@@ -1,6 +1,8 @@
+module P1 where
 import Data.Array
 import Control.Parallel.Strategies
 import Control.Exception
+import Data.List.Split
 
 type Coeff = Integer
 type Poly = Array Int Coeff
@@ -17,8 +19,9 @@ coeff p i | i <= degree p = p ! i
 
 
 -- parte (a)
+-- lo mismo del enunciado para r_i, pero en codigo Haskell
 coeffProd :: Poly -> Poly -> Int -> Coeff
-coeffProd = undefined  -- agregue aquí su definición
+coeffProd p1 p2 i = sum [coeff p1 j * coeff p2 (i - j) | j <- [0..i]]
 
 seqProd :: Poly -> Poly -> Poly
 seqProd p1 p2 = mkPoly (map (coeffProd p1 p2) [0..d])  where
@@ -39,12 +42,17 @@ parProd p1 p2 = undefined  -- agregue aquí su definición
 
 
 -- parte (e)
--- Speedup: complete aquí
+-- Speedup: se calcula el speedup como:
+{-
+  Speedup = Tiempo secuencial / Tiempo paralelo
+
+  Lo que seria equivalente a un ___%.
+-}
 
 
 -- parte (f)
-par1Prod :: Poly -> Poly -> Poly
-par1Prod p1 p2 == undefined  -- agregue aquí su definición
+--par1Prod :: Poly -> Poly -> Poly
+--par1Prod p1 p2 == undefined  -- agregue aquí su definición
 
 -- parte (g)
 -- Elapsed time: complete aquí

@@ -1,5 +1,4 @@
-import Control.Parallel.Strategies
-import Data.List.Split
+module P2 where
 
 
 type Number = Double
