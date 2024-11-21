@@ -26,11 +26,6 @@ Para ejecutar la P2 se utiliza el comando:
 cabal run p2-exe
 ```
 
-Para optener las estadísticas, como vimos en clase, se usó:
-```bash
-cabal run [px-exe] +RTS -N2 -s
-```
-
 
 Este comando compila y ejecuta el proyecto, corriendo los tests definidos en main.
 
