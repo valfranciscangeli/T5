@@ -47,6 +47,6 @@ main = do
   --print (integral f a b n)    
 
   -- paralelo ============
-  print (pintegral f a b n)
+  --print (pintegral f a b n)
 
   return ()
